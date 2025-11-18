@@ -1,15 +1,9 @@
 <h2>{{ title }}</h2>
-<div class="course-item">
-    <h3>{{course[0].name}}</h3>
-    <p>{{course[0].description}}</p>
-    <p [hidden]="course[0].isBooked">Not Booked</p>
-    <img [src]="course[0].img" alt="Course Image" width="100">
-    <button [disabled]="course[0].isBooked">Book Now</button>
-</div>
-<div class="course-item">
-    <h3>{{course[1].name}}</h3>
-    <p>{{course[1].description}}</p>
-    <p [hidden]="course[1].isBooked">Not Booked</p>
-    <img [src]="course[1].img" alt="Course Image" width="100">
-    <button [disabled]="course[1].isBooked">Book Now</button>
-</div>
+<h2 class="title">Wishlist: {{ wishlist }}</h2>
+@for (course of courses; track course.id) {
+<app-course-card
+  [course]="course"
+  (courseBooked)="onCourseBooked($event)"
+  (courseAddedToWishlist)="onAddToWishlist($event)"
+></app-course-card>
+}

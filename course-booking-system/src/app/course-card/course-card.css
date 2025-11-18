@@ -1,4 +1,4 @@
-.course-item {
+.course-card {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     padding: 10px;
@@ -7,11 +7,6 @@
 }
 h3 {
     margin-top: 0 0 0.5rem 0;
-}
-h2.title {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #0056b3;
 }
 
 button {

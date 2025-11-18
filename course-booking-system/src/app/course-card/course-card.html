@@ -1,0 +1,14 @@
+<div class="course-card">
+  <img [src]="course.img" alt="Course Image" width="100" />
+  <h3>{{ course.name }}</h3>
+  <p>{{ course.description }}</p>
+  <p>{{ course.today | formatDate }}</p>
+  <p [ngStyle]="{ 'font-weight': !course.isBooked ? 'bold' : 'none' }" [hidden]="course.isBooked">
+    Not Booked
+  </p>
+  @if (!course.isBooked) {
+  <p style="color: green; font-weight: bold">Available for Booking</p>
+  }
+  <button (click)="onAddToWishlist()">Add to Wishlist</button>
+  <button (click)="onCourseBooked()" [disabled]="course.isBooked">Book Now</button>
+</div>
